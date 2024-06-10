@@ -39,6 +39,7 @@ const Decimals = () => {
 
   return (
     <section>
+      <h2>Decimales</h2>
       <input type="text" value={inputR} onChange={handleInput} />
       <BssD key={"bss"} chain={chain} boolean={boolean} />
       <BcsD key={"bcs"} chain={chain} boolean={boolean} />

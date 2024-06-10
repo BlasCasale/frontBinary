@@ -5,6 +5,7 @@ const Hexadecimals = () => {
 
   return (
     <section>
+      <h2>BCH</h2>
       <GetHexa />
       <GetBinarie />
     </section>

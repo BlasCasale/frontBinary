@@ -6,6 +6,7 @@ import BcdEmpSs from "../BcdEmpSs/BcdEmpSs";
 const Bcd = () => {
   return (
     <section>
+      <h2>BCD</h2>
       <BcdEmpSs />
       <BcdEmpCs />
       <BcdDesSs />
