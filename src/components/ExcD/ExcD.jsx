@@ -1,15 +1,13 @@
-// import { useGetExcD } from "../../hooks/useGetExcD"
+import { useGetExcD } from "../../hooks/useGetExcD"
 
 
 const ExcD = ({ chain, boolean }) => {
 
-  // const binarie = useGetExcD(chain, boolean);
-
-  console.log(chain)
+  const binarie = useGetExcD(chain, boolean);
 
   return (
     <article>
-      <p>¡Queda corregir o limitar a 8 bits! Exc:</p>
+      <p>Exc: {!chain ? "" : binarie}</p>
     </article>
   )
 }
