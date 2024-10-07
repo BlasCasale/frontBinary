@@ -1,9 +1,9 @@
 import { useState } from "react"
-import BssB from "../BssB/BssB";
-import BcsB from "../BcsB/BcsB";
-import Ca1B from "../Ca1B/Ca1B";
-import Ca2B from "../Ca2B/Ca2B";
-import ExcB from "../ExcB/ExcB";
+import BssB from "./BssB/BssB";
+import BcsB from "./BcsB/BcsB";
+import Ca1B from "./Ca1B/Ca1B";
+import Ca2B from "./Ca2B/Ca2B";
+import ExcB from "./ExcB/ExcB";
 
 const Binaries = () => {
   const [chain, setChain] = useState("");

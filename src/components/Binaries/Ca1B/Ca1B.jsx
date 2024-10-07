@@ -1,4 +1,4 @@
-import { useGetCa1B } from "../../hooks/useGetCa1B"
+import { useGetCa1B } from "../../../hooks/useGetCa1B"
 
 const Ca1B = ({ chain }) => {
 
