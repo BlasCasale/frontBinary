@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { hexas } from "../../utils/data";
-import { useGetBinarie } from "../../hooks/useGetBinarie";
+import { useGetBinarie } from "../../../hooks/useGetBinarie";
 
 const GetBinarie = () => {
   const [inputR, setInputR] = useState("");

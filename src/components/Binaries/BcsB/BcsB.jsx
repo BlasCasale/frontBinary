@@ -1,4 +1,4 @@
-import { useGetBcsB } from "../../hooks/useGetBcsB"
+import { useGetBcsB } from "../../../hooks/useGetBcsB"
 
 const BcsB = ({ chain }) => {
 
