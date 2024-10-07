@@ -1,4 +1,4 @@
-import { useGetExcD } from "../../hooks/useGetExcD"
+import { useGetExcD } from "../../../hooks/useGetExcD"
 
 
 const ExcD = ({ chain, boolean }) => {

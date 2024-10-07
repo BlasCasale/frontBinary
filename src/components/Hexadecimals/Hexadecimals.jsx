@@ -1,5 +1,5 @@
-import GetBinarie from "../GetBinarie/GetBinarie"
-import GetHexa from "../GetHexa/GetHexa"
+import GetBinarie from "./GetBinarie/GetBinarie"
+import GetHexa from "./GetHexa/GetHexa"
 
 const Hexadecimals = () => {
 

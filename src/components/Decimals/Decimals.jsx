@@ -1,9 +1,9 @@
 import { useState } from "react";
-import BssD from "../BssD/BssD";
+import BssD from "./BssD/BssD";
 import BcsD from "./BcsD/BcsD";
-import Ca1D from "../Ca1D/Ca1D";
-import Ca2D from "../Ca2D/Ca2D";
-import ExcD from "../ExcD/ExcD";
+import Ca1D from "./Ca1D/Ca1D";
+import Ca2D from "./Ca2D/Ca2D";
+import ExcD from "./ExcD/ExcD";
 
 const Decimals = () => {
   const [chain, setChain] = useState("");

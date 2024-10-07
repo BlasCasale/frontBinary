@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { numbers } from "../../utils/data";
-import { useGetBcdEmpSs } from "../../hooks/useGetBcdEmpSs";
+import { numbers } from "../../../utils/data";
+import { useGetBcdEmpSs } from "../../../hooks/useGetBcdEmpSs";
 
 const BcdEmpSs = () => {
   const [number, setNumber] = useState("");

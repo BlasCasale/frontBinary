@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { hexas } from "../../utils/data";
+import { hexas } from "../../../utils/data";
 import { useGetBinarie } from "../../../hooks/useGetBinarie";
 
 const GetBinarie = () => {

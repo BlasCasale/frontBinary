@@ -50,3 +50,7 @@ export const numbers = {
   '8': '1000',
   '9': '1001'
 };
+
+export const badResponse = "Las cadenas deben tener la misma longitud para compararse"
+
+export const sameLength = "Ingrese dos cadenas de igual longitud"

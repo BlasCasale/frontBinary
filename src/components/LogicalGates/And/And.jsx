@@ -1,17 +1,15 @@
 import { useState } from "react"
 import InputGates from "../../InputGates/InputGates"
+import OutputAnd from "./OutputAnd"
 
 const And = () => {
     const [input, setInput] = useState({ one: "", two: "" })
 
     const handleInput = (e) => {
-        const { name } = e.target
-        let { value } = e.target
-        let newChain = ""
+        const { name, value } = e.target
 
-        for (let i = 0; i < value.lenght; i++) {
-            if (value[i] === "1" || value[i] === "0") newChain += value[i]
-        }
+        // Remueve cualquier caracter que no sea 0 o 1
+        const newChain = value.replace(/[^01]/g, "")
 
         setInput((prev) => ({
             ...prev,
@@ -19,11 +17,13 @@ const And = () => {
         }))
     }
 
+
     return (
         <article>
-            <InputGates handleInput={handleInput} name="one" value={input.one} />
-            <InputGates handleInput={handleInput} name="two" value={input.two} />
-            
+            <h4>Compuerta AND</h4>
+            <InputGates handleInput={handleInput} name="one" value={input.one} n={"1"} key={"one"} />
+            <InputGates handleInput={handleInput} name="two" value={input.two} n={"2"} key={"two"} />
+            <OutputAnd one={input.one} two={input.two} key={"output"} />
         </article>
     )
 }
