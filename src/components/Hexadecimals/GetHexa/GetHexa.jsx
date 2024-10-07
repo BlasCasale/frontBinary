@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useGetHexadecimal } from "../../hooks/useGetHexadecimal";
+import { useGetHexadecimal } from "../../../hooks/useGetHexadecimal";
 
 const GetHexa = () => {
   

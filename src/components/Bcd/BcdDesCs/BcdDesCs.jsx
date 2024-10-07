@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { numbers } from "../../utils/data";
+import { numbers } from "../../../utils/data";
 import { useGetBcdDesCs } from "../../../hooks/useGetBcdDesCs";
 
 const BcdDesCs = () => {
