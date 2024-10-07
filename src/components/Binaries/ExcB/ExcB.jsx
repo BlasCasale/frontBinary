@@ -1,4 +1,4 @@
-import { useGetExcB } from "../../hooks/useGetExcB"
+import { useGetExcB } from '../../../hooks/useGetExcB'
 
 const ExcB = ({ chain }) => {
 

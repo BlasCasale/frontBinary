@@ -1,4 +1,4 @@
-import { useGetBcsD } from "../../hooks/useGetBcsD"
+import { useGetBcsD } from "../../../hooks/useGetBcsD"
 
 
 const BcsD = ({ chain, boolean }) => {
