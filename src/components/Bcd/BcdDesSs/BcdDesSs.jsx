@@ -22,11 +22,11 @@ const BcdDesSs = () => {
   const binarie = useGetBcdDesSs(chain);
 
   return (
-    <artcile>
+    <article>
       <h4>BCD desempaquetado sin signo</h4>
       <input type="text" onChange={handleInput} value={inputR} />
       <p>Binario: {binarie}</p>
-    </artcile>
+    </article>
   )
 }
 

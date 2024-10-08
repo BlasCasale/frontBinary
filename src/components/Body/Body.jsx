@@ -1,3 +1,4 @@
+import Aritmetic from "../Aritmetic/Aritmetic"
 import Bcd from "../Bcd/Bcd"
 import Binaries from "../Binaries/Binaries"
 import Decimals from "../Decimals/Decimals"
@@ -12,6 +13,7 @@ const Body = () => {
       <Hexadecimals />
       <Bcd />
       <LogicalGates />
+      <Aritmetic />
     </main>
   )
 }
