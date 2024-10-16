@@ -1,10 +1,11 @@
 import GetBinarie from "./GetBinarie/GetBinarie"
 import GetHexa from "./GetHexa/GetHexa"
+import './Hexadecimals.css'
 
 const Hexadecimals = () => {
 
   return (
-    <section>
+    <section className="sectionHexadecimals">
       <h2>BCH</h2>
       <GetHexa />
       <GetBinarie />

@@ -1,4 +1,4 @@
-.sectionBcd {
+.aritmeticSection {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,8 +6,8 @@
   gap: 20px;
 }
 
-@media (min-width: 750px) {
-  .sectionBcd {
-    grid-area: BCD;
+@media (min-width: 751px) {
+  .aritmeticSection {
+    grid-area: Aritmetic;
   }
 }

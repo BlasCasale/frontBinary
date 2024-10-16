@@ -5,6 +5,7 @@ import Ca1B from "./Ca1B/Ca1B";
 import Ca2B from "./Ca2B/Ca2B";
 import ExcB from "./ExcB/ExcB";
 import './Binaries.css'
+import Input from "../Input/Input";
 
 const Binaries = () => {
   const [chain, setChain] = useState("");
@@ -28,7 +29,7 @@ const Binaries = () => {
   return (
     <section className="sectionBinaries">
       <h2>Sistemas binarios</h2>
-      <input type="text" onChange={handleInput} value={inputR} />
+      <Input handleInput={handleInput} message={"Cadena binaria:"} name={"binarie"} value={inputR} key={"binarie"} />
       <BssB key={"bss"} chain={chain} />
       <BcsB key={"bcs"} chain={chain} />
       <Ca1B key={"ca1"} chain={chain} />
