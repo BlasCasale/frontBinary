@@ -4,6 +4,7 @@ import BcsB from "./BcsB/BcsB";
 import Ca1B from "./Ca1B/Ca1B";
 import Ca2B from "./Ca2B/Ca2B";
 import ExcB from "./ExcB/ExcB";
+import './Binaries.css'
 
 const Binaries = () => {
   const [chain, setChain] = useState("");
@@ -25,8 +26,8 @@ const Binaries = () => {
   };
 
   return (
-    <section>
-      <h2>Binario</h2>
+    <section className="sectionBinaries">
+      <h2>Sistemas binarios</h2>
       <input type="text" onChange={handleInput} value={inputR} />
       <BssB key={"bss"} chain={chain} />
       <BcsB key={"bcs"} chain={chain} />

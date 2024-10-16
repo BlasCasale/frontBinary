@@ -1,0 +1,5 @@
+rojo = #D62828
+blanco = #E8E9EB
+crema = #E0DFD5
+azul = #1C3041
+azul cajas = #0091AD
