@@ -4,6 +4,7 @@ import Binaries from "../Binaries/Binaries"
 import Decimals from "../Decimals/Decimals"
 import Hexadecimals from "../Hexadecimals/Hexadecimals"
 import LogicalGates from "../LogicalGates/LogicalGates"
+import './Body.css'
 
 const Body = () => {
   return (

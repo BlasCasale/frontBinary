@@ -4,6 +4,7 @@ import BcsD from "./BcsD/BcsD";
 import Ca1D from "./Ca1D/Ca1D";
 import Ca2D from "./Ca2D/Ca2D";
 import ExcD from "./ExcD/ExcD";
+import './Decimals.css'
 
 const Decimals = () => {
   const [chain, setChain] = useState("");
@@ -38,8 +39,8 @@ const Decimals = () => {
   };
 
   return (
-    <section>
-      <h2>Decimales</h2>
+    <section className="sectionDecimals">
+      <h2>Decimal a binario</h2>
       <input type="text" value={inputR} onChange={handleInput} />
       <BssD key={"bss"} chain={chain} boolean={boolean} />
       <BcsD key={"bcs"} chain={chain} boolean={boolean} />

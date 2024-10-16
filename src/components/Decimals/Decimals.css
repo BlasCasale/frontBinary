@@ -1,0 +1,13 @@
+.sectionDecimals {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+}
+
+@media (min-width: 750px) {
+  .sectionDecimals {
+    grid-area: Decimals;
+  }
+}

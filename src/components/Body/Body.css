@@ -1,0 +1,23 @@
+main {
+  background-color: #1C3041;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 10px;
+  gap: 20px;
+}
+
+@media (min-width: 750px) {
+  main {
+    display: grid;
+    grid-template-areas: 
+    'Binaries Decimals'
+    'Binaries BCD'
+    'BCH Aritmetic'
+    'LogicalGates';
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+  }
+}
