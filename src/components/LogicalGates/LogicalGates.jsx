@@ -4,10 +4,11 @@ import Or from "./Or/Or"
 import Nand from "./Nand/Nand"
 import Xor from "./Xor/Xor"
 import Xnor from "./Xnor/Xnor"
+import './LogicalGates.css'
 
 const LogicalGates = () => {
     return (
-        <section>
+        <section className="logicalGatesSection">
             <h3>Compuertas lógicas</h3>
             <And />
             <Or />

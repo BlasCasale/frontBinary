@@ -1,9 +1,10 @@
 import Add from "./Add/Add"
 import Subtraction from "./Subtraction/Subtraction"
+import './Aritmetic.css'
 
 const Aritmetic = () => {
   return (
-    <section>
+    <section className="aritmeticSection">
       <Add />
       <Subtraction />
     </section>
