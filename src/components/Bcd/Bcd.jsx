@@ -1,17 +1,17 @@
-import BcdDesCs from "./BcdDesCs/BcdDesCs";
-import BcdDesSs from "./BcdDesSs/BcdDesSs";
-import BcdEmpCs from "./BcdEmpCs/BcdEmpCs";
-import BcdEmpSs from "./BcdEmpSs/BcdEmpSs";
+import MemoizedBcdDesCsComponent from "./BcdDesCs/BcdDesCs";
+import MemoizedBcdDesSsComponent from "./BcdDesSs/BcdDesSs";
+import MemoizedBcdEmpCsComponent from "./BcdEmpCs/BcdEmpCs";
+import MemoizedBcdEmpSsComponent from "./BcdEmpSs/BcdEmpSs";
 import './Bcd.css'
 
 const Bcd = () => {
   return (
     <section className="sectionBcd">
       <h2>BCD</h2>
-      <BcdEmpSs />
-      <BcdEmpCs />
-      <BcdDesSs />
-      <BcdDesCs />
+      <MemoizedBcdEmpSsComponent />
+      <MemoizedBcdEmpCsComponent />
+      <MemoizedBcdDesSsComponent />
+      <MemoizedBcdDesCsComponent />
     </section>
   )
 }

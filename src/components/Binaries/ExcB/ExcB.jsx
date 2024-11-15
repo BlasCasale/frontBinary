@@ -1,17 +1,22 @@
+import { memo } from 'react'
 import { useGetExcB } from '../../../hooks/useGetExcB'
 
-const ExcB = ({ chain }) => {
-
-  const info = useGetExcB(chain);
+const ExcBComponent = ({ chain }) => {
+  const info = useGetExcB(chain) || {}
+  const { binary = '', max = {} } = info
+  const { positive = '', negative = '' } = max
 
   return (
     <article>
       <h4>Exc</h4>
-      <p>El número interpretado en Exc es: {info.binary}</p>
-      <p>El máximo numero positivo representable es: {info.max.positive}</p>
-      <p>El máximo numero negativo representable es: {info.max.negative}</p>
+      <p>El número interpretado en Exc es: {binary}</p>
+      <p>El máximo número positivo representable es: {positive}</p>
+      <p>El máximo número negativo representable es: {negative}</p>
     </article>
   )
 }
 
-export default ExcB
+// Nombrar explícitamente el componente memoizado
+const MemoizedExcBComponent = memo(ExcBComponent, (prevProps, nextProps) => prevProps.chain === nextProps.chain)
+
+export default MemoizedExcBComponent

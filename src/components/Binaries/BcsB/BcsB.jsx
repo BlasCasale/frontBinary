@@ -1,17 +1,21 @@
+import { memo } from 'react'
 import { useGetBcsB } from "../../../hooks/useGetBcsB"
 
-const BcsB = ({ chain }) => {
+const BcsBComponent = ({ chain }) => {
+  const info = useGetBcsB(chain) || {}
+  const { binary = '', max = {} } = info
+  const { positive = '', negative = '' } = max
 
-  const info = useGetBcsB(chain);
-  
   return (
     <article>
       <h4>BCS</h4>
-      <p>El numero interpretado en BCS es: {info.binary}</p>
-      <p>El máximo N° positivo representable es: {info.max.positive}</p>
-      <p>El máximo N° negativo representable es: {info.max.negative}</p>
+      <p>El numero interpretado en BCS es: {binary}</p>
+      <p>El máximo N° positivo representable es: {positive}</p>
+      <p>El máximo N° negativo representable es: {negative}</p>
     </article>
   )
 }
 
-export default BcsB
+const MemoizedBcsBComponent = memo(BcsBComponent, (prevProps, nextProps) => prevProps.chain === nextProps.chain)
+
+export default MemoizedBcsBComponent

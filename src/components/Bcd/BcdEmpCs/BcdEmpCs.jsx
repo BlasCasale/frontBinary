@@ -1,40 +1,50 @@
-import { useState } from "react";
-import { numbers } from "../../../utils/data";
-import { useGetBcdEmpCs } from "../../../hooks/useGetBcdEmpCs";
+import { useState, useCallback, memo } from "react"
+import { useGetBcdEmpCs } from "../../../hooks/useGetBcdEmpCs"
+import Input from "../../Input/Input"
 
-const BcdEmpCs = () => {
-  const [inputR, setInputR] = useState("");
-  const [chain, setChain] = useState("");
+const BcdEmpCsComponent = () => {
+  const [inputR, setInputR] = useState("")
+  const [chain, setChain] = useState("")
 
-  const boolean = inputR[0] === "-" ? false : true;
+  const boolean = inputR[0] !== "-"
 
-  const handleInput = (e) => {
-    let input = e.target.value;
-    let newChain = "";
+  const handleInput = useCallback((e) => {
+    const input = e.target.value
+    const newChain = input[0] === "-"
+      ? input.slice(1).replace(/[^0-9]/g, "")
+      : input.replace(/[^0-9]/g, "")
 
-    for (let i = 0; i < input.length; i++) {
-      if (input[0] === "-") {
-        if (i !== 0 && numbers[input[i]]) newChain += input[i];
-        else if (i !== 0) input[i] = ""
-      } else {
-        if (numbers[input[i]]) newChain += input[i];
-        else input[i] = ""
-      }
-    }
+    const newInput = input[0] === "-"
+      ? '-' + input.slice(1).replace(/[^0-9]/g, "")
+      : input.replace(/[^0-9]/g, "")
 
-    setChain(newChain);
-    setInputR(input);
-  };
+    setInputR(newInput)
+    setChain(newChain)
+  }, [])
 
-  const binarie = useGetBcdEmpCs(chain, boolean);
+  const cleanInput = useCallback(() => {
+    setInputR("")
+    setChain("")
+  }, [])
+
+  const binarie = useGetBcdEmpCs(chain, boolean)
 
   return (
     <section>
       <h4>BCD empaquetado con signo</h4>
-      <input type="text" onChange={handleInput} value={inputR} />
+      <Input
+        handleInput={handleInput}
+        message={"Número con signo:"}
+        name={"bcdEmpCs"}
+        value={inputR}
+        key={"bcdEmpCs"}
+        cleanInput={cleanInput}
+      />
       <p>Binario: {binarie}</p>
     </section>
   )
 }
 
-export default BcdEmpCs;
+const MemoizedBcdEmpCsComponent = memo(BcdEmpCsComponent)
+
+export default MemoizedBcdEmpCsComponent

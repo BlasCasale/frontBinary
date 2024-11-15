@@ -15,9 +15,7 @@ export const hexa = {
   '1101': 'D',
   '1110': 'E',
   '1111': 'F'
-};
-
-export const hexas = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+}
 
 export const binary = {
   '0': '0000',
@@ -36,7 +34,7 @@ export const binary = {
   'D': '1101',
   'E': '1110',
   'F': '1111'
-};
+}
 
 export const numbers = {
   '0': '0000',
@@ -49,7 +47,7 @@ export const numbers = {
   '7': '0111',
   '8': '1000',
   '9': '1001'
-};
+}
 
 export const badResponse = "Las cadenas deben tener la misma longitud para compararse"
 

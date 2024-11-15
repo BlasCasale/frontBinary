@@ -2,7 +2,6 @@ import { useGetAdd } from "../../../hooks/useGetAdd"
 import { badResponse, sameLength } from "../../../utils/data"
 
 const Outputadd = ({ one, two }) => {
-
   const add = useGetAdd(one, two)
 
   return (

@@ -1,15 +1,16 @@
+import { memo } from 'react'
 import { useGetCa2D } from "../../../hooks/useGetCa2D"
 
-
-const Ca2D = ({ chain, boolean }) => {
-
-  const binarie = useGetCa2D(chain, boolean);
+const Ca2DComponent = ({ chain, boolean }) => {
+  const binarie = useGetCa2D(chain, boolean) || ''
 
   return (
     <article>
-      <p>En Ca2: {!chain ? "" : binarie}</p>
+      <p>En Ca2: {chain ? binarie : ''}</p>
     </article>
   )
 }
 
-export default Ca2D
+const MemoizedCa2DComponent = memo(Ca2DComponent, (prevProps, nextProps) => prevProps.chain === nextProps.chain && prevProps.boolean === nextProps.boolean)
+
+export default MemoizedCa2DComponent

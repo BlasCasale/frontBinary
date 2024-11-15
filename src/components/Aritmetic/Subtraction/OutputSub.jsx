@@ -2,7 +2,6 @@ import { useGetSub } from "../../../hooks/useGetSub"
 import { badResponse, sameLength } from "../../../utils/data"
 
 const OutputSub = ({ one, two }) => {
-
   const sub = useGetSub(one, two)
 
   return (

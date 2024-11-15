@@ -1,7 +1,8 @@
+import { memo } from "react"
 
-const Trash = () => {
+const Trash = ({ cleanInput }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-trash-x" width="25" height="25" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ff2825" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-trash-x" width="25" height="25" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ff2825" fill="none" strokeLinecap="round" strokeLinejoin="round" onClick={cleanInput}>
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M4 7h16" />
       <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
@@ -11,4 +12,5 @@ const Trash = () => {
   )
 }
 
-export default Trash
+const MemoizedTrash = memo(Trash)
+export default MemoizedTrash

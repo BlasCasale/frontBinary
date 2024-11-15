@@ -1,13 +1,13 @@
-import Trash from '../Trash/Trash'
+import MemoizedTrash from '../Trash/Trash'
 
-const Input = ({ handleInput, value, name, message }) => {
+const Input = ({ handleInput, value, name, message, cleanInput }) => {
   return (
     <div>
       <div>
         <label htmlFor={name}>{message}</label>
         <div className="boxInput">
           <input type="text" id={name} name={name} onChange={handleInput} value={value} />
-          <Trash />
+          <MemoizedTrash cleanInput={cleanInput} />
         </div>
       </div>
     </div>

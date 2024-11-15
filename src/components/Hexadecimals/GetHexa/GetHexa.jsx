@@ -1,35 +1,37 @@
-import { useState } from "react"
-import { useGetHexadecimal } from "../../../hooks/useGetHexadecimal";
+import { useState, useCallback, memo } from "react"
+import { useGetHexadecimal } from "../../../hooks/useGetHexadecimal"
+import Input from "../../Input/Input"
 
-const GetHexa = () => {
-  
-  const [inputR, setInputR] = useState("");
-  const [chain, setChain] = useState("");
+const GetHexaComponent = () => {
+  const [input, setInput] = useState("")
 
-  const handleInput = (e) => {
-    let input = e.target.value;
-    let newChain = "";
+  const handleInput = useCallback((e) => {
+    const value = e.target.value
+    const newChain = value.replace(/[^01]/g, "")
+    setInput(newChain)
+  }, [])
 
-    for (let i = 0; i < input.length; i++) {
-      if (input[i] === "0" || input[i] === "1") {
-        newChain += input[i];
-      } else {
-        input[i] = "";
-      }
-    }
-    setInputR(input);
-    setChain(newChain);
-  };
+  const cleanInput = useCallback(() => {
+    setInput("")
+  }, [])
 
-  const hexa = useGetHexadecimal(chain);
+  const hexa = useGetHexadecimal(input)
 
   return (
     <article>
       <h4>De binario a hexadecimal</h4>
-      <input type="text" onChange={handleInput} value={inputR} />
+      <Input
+        handleInput={handleInput}
+        message={"Binario:"}
+        name={"binarieToHexa"}
+        value={input}
+        key={"binarieToHexa"}
+        cleanInput={cleanInput}
+      />
       <p>Cadena en hexadecimal: {hexa}</p>
     </article>
   )
 }
+const MemoizedGetHexa = memo(GetHexaComponent)
 
-export default GetHexa
+export default MemoizedGetHexa

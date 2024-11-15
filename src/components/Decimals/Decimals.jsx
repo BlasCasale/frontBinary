@@ -1,54 +1,53 @@
-import { useState } from "react";
-import BssD from "./BssD/BssD";
-import BcsD from "./BcsD/BcsD";
-import Ca1D from "./Ca1D/Ca1D";
-import Ca2D from "./Ca2D/Ca2D";
-import ExcD from "./ExcD/ExcD";
+import { useState, useCallback, memo } from "react"
+import MemoizedBssDComponent from "./BssD/BssD"
+import MemoizedBcsDComponent from "./BcsD/BcsD"
+import MemoizedCa1DComponent from "./Ca1D/Ca1D"
+import MemoizedCa2DComponent from "./Ca2D/Ca2D"
+import MemoizedExcDComponent from "./ExcD/ExcD"
 import './Decimals.css'
+import Input from "../Input/Input"
+
+const MemoizedBssD = memo(MemoizedBssDComponent, (prevProp, nextProp) => prevProp.chain === nextProp.chain)
+const MemoizedBcsD = memo(MemoizedBcsDComponent, (prevProp, nextProp) => prevProp.chain === nextProp.chain)
+const MemoizedCa1D = memo(MemoizedCa1DComponent, (prevProp, nextProp) => prevProp.chain === nextProp.chain)
+const MemoizedCa2D = memo(MemoizedCa2DComponent, (prevProp, nextProp) => prevProp.chain === nextProp.chain)
+const MemoizedExcD = memo(MemoizedExcDComponent, (prevProp, nextProp) => prevProp.chain === nextProp.chain)
 
 const Decimals = () => {
-  const [chain, setChain] = useState("");
-  const [inputR, setInputR] = useState("");
+  const [input, setInput] = useState("")
 
-  const boolean = inputR[0] === "-" ? false : true;
+  const boolean = input[0] !== "-"
 
-  const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  const handleInput = useCallback((e) => {
+    let value = e.target.value
 
-  const handleInput = (e) => {
-    let input = e.target.value;
-    let newChain = "";
+    const newChain = value.match(/^-?\d*/)[0]
 
-    for (let i = 0; i < input.length; i++) {
-      if (input[0] === "-") {
-        if (i !== 0 && numbers.includes(input[i])) {
-          newChain += input[i];
-        } else if (i !== 0) {
-          input[i] = "";
-        }
-      } else {
-        if (numbers.includes(input[i])) {
-          newChain += input[i];
-        } else {
-          input[i] = "";
-        }
-      }
-    }
+    setInput(newChain)
+  }, [])
 
-    setInputR(input);
-    setChain(newChain);
-  };
+  const cleanInput = useCallback(() => {
+    setInput("")
+  }, [])
+
 
   return (
     <section className="sectionDecimals">
       <h2>Decimal a binario</h2>
-      <input type="text" value={inputR} onChange={handleInput} />
-      <BssD key={"bss"} chain={chain} boolean={boolean} />
-      <BcsD key={"bcs"} chain={chain} boolean={boolean} />
-      <Ca1D key={"ca1"} chain={chain} boolean={boolean} />
-      <Ca2D key={"ca2"} chain={chain} boolean={boolean} />
-      <ExcD key={"exc"} chain={chain} boolean={boolean} />
+      <Input
+        handleInput={handleInput}
+        message={"Decimal:"}
+        name={"decimalToBinarie"}
+        value={input}
+        key={"decimalToBinarie"}
+      />
+      <MemoizedBssD key={"bss"} chain={input} boolean={boolean} />
+      <MemoizedBcsD key={"bcs"} chain={input} boolean={boolean} />
+      <MemoizedCa1D key={"ca1"} chain={input} boolean={boolean} />
+      <MemoizedCa2D key={"ca2"} chain={input} boolean={boolean} />
+      <MemoizedExcD key={"exc"} chain={input} boolean={boolean} />
     </section>
-  );
-};
+  )
+}
 
-export default Decimals;
+export default Decimals

@@ -1,33 +1,41 @@
-import { useState } from "react";
-import { numbers } from "../../../utils/data";
-import { useGetBcdEmpSs } from "../../../hooks/useGetBcdEmpSs";
+import { useState, useCallback, memo } from "react"
+import { useGetBcdEmpSs } from "../../../hooks/useGetBcdEmpSs"
+import Input from "../../Input/Input"
 
-const BcdEmpSs = () => {
-  const [number, setNumber] = useState("");
-  const [chain, setChain] = useState("");
+const BcdEmpSsComponent = () => {
+  const [number, setNumber] = useState("")
+  const [chain, setChain] = useState("")
 
-  const handleInput = (e) => {
-    let input = e.target.value;
-    let newChain = "";
+  const handleInput = useCallback((e) => {
+    const input = e.target.value
+    const newChain = input.replace(/[^0-9]/g, "")
+    setNumber(newChain)
+    setChain(newChain)
+  }, [])
 
-    for (let i = 0; i < input.length; i++) {
-      if (numbers[input[i]]) newChain += input[i];
-      else input[i] = "";
-    }
+  const binarie = useGetBcdEmpSs(chain)
 
-    setChain(newChain);
-    setNumber(input);
-  };
-
-  const binarie = useGetBcdEmpSs(chain);
+  const cleanInput = useCallback(() => {
+    setNumber("")
+    setChain("")
+  }, [])
 
   return (
     <article>
       <h4>BCD empaquetado sin signo</h4>
-      <input type="text" value={number} onChange={handleInput} />
+      <Input
+        handleInput={handleInput}
+        message={"Número:"}
+        name={"bcdEmpSs"}
+        value={number}
+        key={"bcdEmpSs"}
+        cleanInput={cleanInput}
+      />
       <p>Binario: {binarie}</p>
     </article>
   )
 }
 
-export default BcdEmpSs;
+const MemoizedBcdEmpSsComponent = memo(BcdEmpSsComponent)
+
+export default MemoizedBcdEmpSsComponent

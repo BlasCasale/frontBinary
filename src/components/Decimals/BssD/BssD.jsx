@@ -1,16 +1,17 @@
+import { memo } from 'react'
 import { useGetBssD } from "../../../hooks/useGetBssD"
 
-const BssD = ({ chain, boolean }) => {
+const BssDComponent = ({ chain, boolean }) => {
+  const wrongResponse = "No se puede representar N° negativos en BSS"
+  const binarie = useGetBssD(chain) || ''
 
-  const wrongResponse = "No se puede representar N° negativos en BSS";
-
-  const binarie = useGetBssD(chain);
-  
   return (
     <article>
-      <p>En BSS: {!boolean ? wrongResponse : binarie}</p>
+      <p>En BSS: {boolean ? binarie : wrongResponse}</p>
     </article>
   )
 }
 
-export default BssD
+const MemoizedBssDComponent = memo(BssDComponent, (prevProps, nextProps) => prevProps.chain === nextProps.chain && prevProps.boolean === nextProps.boolean)
+
+export default MemoizedBssDComponent

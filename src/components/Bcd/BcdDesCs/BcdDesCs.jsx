@@ -1,40 +1,47 @@
-import { useState } from "react"
-import { numbers } from "../../../utils/data";
-import { useGetBcdDesCs } from "../../../hooks/useGetBcdDesCs";
+import { useState, useCallback, memo } from "react"
+import { useGetBcdDesCs } from "../../../hooks/useGetBcdDesCs"
+import Input from "../../Input/Input"
 
-const BcdDesCs = () => {
-  const [inputR, setInputR] = useState("");
-  const [chain, setChain] = useState("");
+const BcdDesCsComponent = () => {
+  const [input, setInput] = useState("")
+  const [chain, setChain] = useState("")
 
-  const boolean = inputR[0] === "-" ? false : true;
+  const boolean = input[0] !== "-"
 
-  const handleInput = (e) => {
-    let input = e.target.value;
-    let newChain = "";
+  const handleInput = useCallback((e) => {
+    const value = e.target.value
+    const isNegative = value[0] === "-"
+    const newChain = isNegative
+      ? value.slice(1).replace(/[^0-9]/g, "")
+      : value.replace(/[^0-9]/g, "")
 
-    for (let i = 0; i < input.length; i++) {
-      if (input[0] === "-") {
-        if (i !== 0 && numbers[input[i]]) newChain += input[i];
-        else if (i !== 0) input[i] = ""
-      } else {
-        if (numbers[input[i]]) newChain += input[i];
-        else input[i] = ""
-      }
-    }
+    setInput(value)
+    setChain(newChain)
+  }, [])
 
-    setChain(newChain);
-    setInputR(input);
-  };
+  const cleanInput = useCallback(() => {
+    setChain("")
+    setInput("")
+  }, [])
 
-  const binarie = useGetBcdDesCs(chain, boolean);
+  const binarie = useGetBcdDesCs(chain, boolean)
 
   return (
     <article>
       <h4>BCD desempaquetado con signo</h4>
-      <input type="text" value={inputR} onChange={handleInput} />
+      <Input
+        handleInput={handleInput}
+        message={"Número con signo:"}
+        name={"BcdDesCs"}
+        value={input}
+        key={"BcdDesCs"}
+        cleanInput={cleanInput}
+      />
       <p>Binario: {binarie}</p>
     </article>
   )
 }
 
-export default BcdDesCs
+const MemoizedBcdDesCsComponent = memo(BcdDesCsComponent)
+
+export default MemoizedBcdDesCsComponent

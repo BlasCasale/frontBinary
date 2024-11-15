@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react"
 
 export const useGetAdd = (one, two) => {
-
   const [add, setAdd] = useState({ result: "", carry: "0", n: "0", overflow: "0", z: "0" })
 
   useEffect(() => {
     if (one && one.length === two.length) {
-      let result = ''
+      let result = ""
       let carry = 0
       let i = one.length - 1
       let j = two.length - 1
@@ -18,15 +17,15 @@ export const useGetAdd = (one, two) => {
       }
 
       if (one.length != result.length) {
-        setAdd((prev) => ({
+        setAdd(prev => ({
           ...prev,
           carry: "1"
         }))
-        result = result.slice(1, result.length)
+        result = result.slice(1)
       }
 
       if (one[0] === two[0] && one[0] !== result[0]) {
-        setAdd((prev) => ({
+        setAdd(prev => ({
           ...prev,
           overflow: "1"
         }))
@@ -34,13 +33,12 @@ export const useGetAdd = (one, two) => {
 
       const zero = /^0*$/.test(result)
 
-      setAdd((prev) => ({
+      setAdd(prev => ({
         ...prev,
         result,
         n: result[0],
         z: zero ? "1" : "0"
       }))
-
     } else {
       setAdd({ result: "", carry: "0", n: "0", overflow: "0", z: "0" })
     }
