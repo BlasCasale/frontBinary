@@ -27,7 +27,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: tu-usuario/tu-repo:latest
+          tags: blascasale/tu-bin:latest
 
       - name: Desplegar imagen Docker
-        run: docker run -d -p 3000:3000 tu-usuario/tu-repo:latest
+        run: docker run -d -p 3000:3000 blascasale/tu-bin:latest
