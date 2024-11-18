@@ -1,3 +1,4 @@
+import React from "react"
 import { useState, useCallback, memo } from "react"
 import { useGetBcdEmpSs } from "../../../hooks/useGetBcdEmpSs"
 import Input from "../../Input/Input"
@@ -25,7 +26,7 @@ const BcdEmpSsComponent = () => {
       <h4>BCD empaquetado sin signo</h4>
       <Input
         handleInput={handleInput}
-        message={"Número:"}
+        message={"Número sin signo:"}
         name={"bcdEmpSs"}
         value={number}
         key={"bcdEmpSs"}

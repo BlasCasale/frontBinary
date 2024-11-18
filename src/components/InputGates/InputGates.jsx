@@ -1,3 +1,4 @@
+import React from "react"
 import MemoizedTrash from "../Trash/Trash"
 
 const InputGates = ({ handleInput, name, value, n, cleanInput }) => {
