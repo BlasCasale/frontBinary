@@ -1,3 +1,4 @@
+import React from 'react'
 import MemoizedTrash from '../Trash/Trash'
 
 const Input = ({ handleInput, value, name, message, cleanInput }) => {

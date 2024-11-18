@@ -1,7 +1,8 @@
-import MemoizedBcdDesCsComponent from "./BcdDesCs/BcdDesCs";
-import MemoizedBcdDesSsComponent from "./BcdDesSs/BcdDesSs";
-import MemoizedBcdEmpCsComponent from "./BcdEmpCs/BcdEmpCs";
-import MemoizedBcdEmpSsComponent from "./BcdEmpSs/BcdEmpSs";
+import React from "react"
+import MemoizedBcdDesCsComponent from "./BcdDesCs/BcdDesCs"
+import MemoizedBcdDesSsComponent from "./BcdDesSs/BcdDesSs"
+import MemoizedBcdEmpCsComponent from "./BcdEmpCs/BcdEmpCs"
+import MemoizedBcdEmpSsComponent from "./BcdEmpSs/BcdEmpSs"
 import './Bcd.css'
 
 const Bcd = () => {
