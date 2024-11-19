@@ -16,7 +16,9 @@ const BcdDesCsComponent = () => {
       ? value.slice(1).replace(/[^0-9]/g, "")
       : value.replace(/[^0-9]/g, "")
 
-    setInput(value)
+    const newValue = isNegative ? `-${newChain}` : newChain
+
+    setInput(newValue)
     setChain(newChain)
   }, [])
 

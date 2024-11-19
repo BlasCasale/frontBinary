@@ -28,7 +28,7 @@ const BcdDesSsComponent = () => {
       <h4>BCD desempaquetado sin signo</h4>
       <Input
         handleInput={handleInput}
-        message={"Numero sin signo:"}
+        message={"Número sin signo:"}
         name={"bcdDesSs"}
         value={inputR}
         key={"bcdDesSs"}

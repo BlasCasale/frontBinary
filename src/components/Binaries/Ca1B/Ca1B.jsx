@@ -1,3 +1,4 @@
+import React from 'react'
 import { memo } from 'react'
 import { useGetCa1B } from "../../../hooks/useGetCa1B"
 
