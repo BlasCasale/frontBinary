@@ -1,8 +1,9 @@
+import React from 'react'
 import { memo } from 'react'
 import { useGetBssB } from "../../../hooks/useGetBssB"
 
 const BssBComponent = ({ chain }) => {
-  const info = useGetBssB(chain) || {} 
+  const info = useGetBssB(chain) || {}
   const { num = '', max = '' } = info
 
   return (

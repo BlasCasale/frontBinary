@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export const useGetBcsB = (chain) => {
   const [binary, setBinary] = useState("");
-  const [max, setMax] = useState("")
+  const [max, setMax] = useState({ positive: "", negative: "" })
 
   useEffect(() => {
     let result = 0;
@@ -32,9 +32,15 @@ export const useGetBcsB = (chain) => {
       } else {
         setBinary(result);
       }
+    } else {
+      setBinary("");
+      setMax({ positive: "", negative: "" })
     }
 
-    return () => setBinary("");
+    return () => {
+      setBinary("")
+      setMax({ positive: "", negative: "" })
+    };
   }, [chain]);
 
   const info = {

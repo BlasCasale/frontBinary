@@ -8,6 +8,11 @@ import { useGetSub } from '../hooks/useGetSub'
 jest.mock('../hooks/useGetSub')
 
 describe('OutputSub Component', () => {
+
+  beforeEach(() => {
+    useGetSub.mockClear()
+  })
+
   test('renders OutputSub con 0 - 0', () => {
     // Mock the hook's return value for default props
     useGetSub.mockReturnValue({
