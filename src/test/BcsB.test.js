@@ -13,7 +13,7 @@ describe('test de funcionamiento de BCS binario', () => {
 
   test('test con cadena vacia', () => {
     useGetBcsB.mockReturnValue({
-      result: "",
+      binary: "",
       max: {
         positive: "",
         negative: ""
@@ -23,13 +23,13 @@ describe('test de funcionamiento de BCS binario', () => {
     render(<BcsB chain={""} />)
 
     expect(screen.getByText(/El número interpretado en BCS es:/i)).toBeInTheDocument()
-    expect(screen.getByText(/El máximo N° positivo representable es:/i)).toBeInTheDocument()
-    expect(screen.getByText(/El máximo N° negativo representable es:/i)).toBeInTheDocument()
+    expect(screen.getByText(/El máximo número positivo representable es:/i)).toBeInTheDocument()
+    expect(screen.getByText(/El máximo número negativo representable es:/i)).toBeInTheDocument()
   })
 
   test('test con cadena 101010', () => {
     useGetBcsB.mockReturnValue({
-      result: "-10",
+      binary: "-10",
       max: {
         positive: 31,
         negative: -31
@@ -39,7 +39,23 @@ describe('test de funcionamiento de BCS binario', () => {
     render(<BcsB chain={"101010"} />)
 
     expect(screen.getByText(/El número interpretado en BCS es: -10/i)).toBeInTheDocument()
-    expect(screen.getByText(/El máximo N° positivo representable es: 31/i)).toBeInTheDocument()
-    expect(screen.getByText(/El máximo N° negativo representable es: -31/i)).toBeInTheDocument()
+    expect(screen.getByText(/El máximo número positivo representable es: 31/i)).toBeInTheDocument()
+    expect(screen.getByText(/El máximo número negativo representable es: -31/i)).toBeInTheDocument()
+  })
+
+  test('test con cadena 010101', () => {
+    useGetBcsB.mockReturnValue({
+      binary: "21",
+      max: {
+        positive: 31,
+        negative: -31
+      }
+    })
+
+    render(<BcsB chain={"010101"} />)
+
+    expect(screen.getByText(/El número interpretado en BCS es: 21/i)).toBeInTheDocument()
+    expect(screen.getByText(/El máximo número positivo representable es: 31/i)).toBeInTheDocument()
+    expect(screen.getByText(/El máximo número negativo representable es: -31/i)).toBeInTheDocument()
   })
 })

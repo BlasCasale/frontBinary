@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export const useGetCa2B = (chain) => {
   const [binary, setBinary] = useState("");
-  const [max, setMax] = useState({});
+  const [max, setMax] = useState({ positive: "", negative: "" });
 
   useEffect(() => {
     if (chain.length >= 2) {
@@ -37,11 +37,14 @@ export const useGetCa2B = (chain) => {
       if (lastBit == '1') result = result * (-1);
       result = result.toString();
       setBinary(result);
+    } else {
+      setBinary("")
+      setMax({ positive: "", negative: "" })
     }
 
     return () => {
       setBinary("");
-      setMax({});
+      setMax({ positive: "", negative: "" });
     }
   }, [chain]);
 
