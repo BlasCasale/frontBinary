@@ -43,10 +43,5 @@ export const useGetBcsB = (chain) => {
     };
   }, [chain]);
 
-  const info = {
-    binary,
-    max
-  }
-
-  return info;
+  return { binary, max };
 }

@@ -9,8 +9,8 @@ const BcsBComponent = ({ chain }) => {
     <article>
       <h4>BCS</h4>
       <p>El número interpretado en BCS es: {info.binary}</p>
-      <p>El máximo N° positivo representable es: {info.max.positive}</p>
-      <p>El máximo N° negativo representable es: {info.max.negative}</p>
+      <p>El máximo número positivo representable es: {info.max.positive}</p>
+      <p>El máximo número negativo representable es: {info.max.negative}</p>
     </article>
   )
 }

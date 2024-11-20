@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export const useGetCa1B = (chain) => {
   const [binary, setBinary] = useState("");
-  const [max, setMax] = useState({});
+  const [max, setMax] = useState({ positive: "", negative: "" });
 
   useEffect(() => {
     let result = 0;
@@ -38,11 +38,14 @@ export const useGetCa1B = (chain) => {
         result = result.padStart(result.length + 1, '-');
       }
       setBinary(result);
+    } else {
+      setBinary("");
+      setMax({ positive: "", negative: "" });
     }
 
     return () => {
       setBinary("");
-      setMax({});
+      setMax({ positive: "", negative: "" });
     }
   }, [chain])
 

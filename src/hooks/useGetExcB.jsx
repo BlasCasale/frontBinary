@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export const useGetExcB = (chain) => {
   const [binary, setBinary] = useState("");
-  const [max, setMax] = useState({});
+  const [max, setMax] = useState({ positive: "", negative: "" });
 
   useEffect(() => {
     let result = 0;
@@ -27,11 +27,14 @@ export const useGetExcB = (chain) => {
       result = result - excToSub;
       result = result.toString();
       setBinary(result);
+    } else {
+      setBinary("")
+      setMax({ positive: "", negative: "" })
     }
 
     return () => {
       setBinary("");
-      setMax({});
+      setMax({ positive: "", negative: "" });
     }
   }, [chain]);
 
