@@ -1,8 +1,9 @@
+import React from 'react'
 import { memo } from 'react'
 import { useGetBssD } from "../../../hooks/useGetBssD"
 
 const BssDComponent = ({ chain, boolean }) => {
-  const wrongResponse = "No se puede representar N° negativos en BSS"
+  const wrongResponse = "No se puede representar números negativos en BSS"
   const binarie = useGetBssD(chain) || ''
 
   return (
