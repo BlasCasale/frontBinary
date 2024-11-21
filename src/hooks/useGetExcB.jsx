@@ -11,7 +11,7 @@ export const useGetExcB = (chain) => {
       const maxNumber = Math.pow(2, chain.length - 1);
       const maxNumbers = {
         positive: maxNumber - 1,
-        negative: maxNumber * -1
+        negative: (maxNumber + (maxNumber - 1)) * -1
       };
       setMax(maxNumbers);
 

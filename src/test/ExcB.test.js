@@ -29,11 +29,33 @@ describe('test de funcionamiento de Exc binario', () => {
 
   test('test con cadena 1010101', () => {
     useGetExcB.mockReturnValue({
-      binary: "",
+      binary: "21",
       max: {
-        positive: "",
-        negative: ""
+        positive: "63",
+        negative: "-127"
       }
     })
+
+    render(<MemoizedExcBComponent chain={"1010101"} />)
+
+    expect(screen.getByText(/El número interpretado en Exc es: 21/i)).toBeInTheDocument()
+    expect(screen.getByText(/El máximo número positivo representable es: 63/i)).toBeInTheDocument()
+    expect(screen.getByText(/El máximo número negativo representable es: -127/i)).toBeInTheDocument()
+  })
+
+  test('test con cadena 00101', () => {
+    useGetExcB.mockReturnValue({
+      binary: "-11",
+      max: {
+        positive: "15",
+        negative: "-31"
+      }
+    })
+
+    render(<MemoizedExcBComponent chain={"00101"} />)
+
+    expect(screen.getByText(/El número interpretado en Exc es: -11/i)).toBeInTheDocument()
+    expect(screen.getByText(/El máximo número positivo representable es: 15/i)).toBeInTheDocument()
+    expect(screen.getByText(/El máximo número negativo representable es: -31/i)).toBeInTheDocument()
   })
 })
