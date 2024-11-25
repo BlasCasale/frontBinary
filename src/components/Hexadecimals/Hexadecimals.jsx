@@ -1,3 +1,4 @@
+import React from "react"
 import GetBinarie from "./GetBinarie/GetBinarie"
 import GetHexa from "./GetHexa/GetHexa"
 import './Hexadecimals.css'

@@ -1,3 +1,4 @@
+import React from "react"
 import { useState, useCallback, memo } from "react"
 import { useGetBinarie } from "../../../hooks/useGetBinarie"
 import Input from "../../Input/Input"
@@ -20,7 +21,7 @@ const GetBinarieComponent = () => {
 
   return (
     <div>
-      <h4>De hexacimal a binario</h4>
+      <h4>De hexadecimal a binario</h4>
       <Input
         handleInput={handleInput}
         message={"Hexadecimal:"}

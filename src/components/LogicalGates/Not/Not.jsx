@@ -1,3 +1,4 @@
+import React from "react"
 import { useCallback, useState } from "react"
 import InputGates from "../../InputGates/InputGates"
 import OutputNot from "./OutputNot"

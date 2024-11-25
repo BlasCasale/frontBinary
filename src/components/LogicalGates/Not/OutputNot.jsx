@@ -1,3 +1,4 @@
+import React from "react"
 import { useGetNot } from "../../../hooks/useGetNot"
 
 const OutputNot = ({ chain }) => {
