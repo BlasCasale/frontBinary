@@ -7,8 +7,8 @@ describe('test de funcionamiento', () => {
   test('renderizado inicial', () => {
     render(<Binaries />)
 
-    const countOfTrahs = screen.getAllByTestId('trashTest')
-    expect(countOfTrahs).toHaveLength(1)
+    const countOfTrash = screen.getAllByTestId('trashTest')
+    expect(countOfTrash).toHaveLength(1)
     expect(screen.getByText(/El número interpretado en BSS es:/i)).toBeInTheDocument()
     expect(screen.getByText(/El número interpretado en BCS es:/i)).toBeInTheDocument()
     expect(screen.getByText(/El número interpretado en Ca1 es:/i)).toBeInTheDocument()

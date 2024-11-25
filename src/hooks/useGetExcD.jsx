@@ -11,6 +11,7 @@ export const useGetExcD = (chain, boolean) => {
 
     chain = Number(chain);
     if (!boolean) {
+      chain = chain * (-1)
       /*
         chain = -12
         partial 1

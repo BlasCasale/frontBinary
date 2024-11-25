@@ -1,3 +1,4 @@
+import React from "react"
 import { useState, useCallback, memo } from "react"
 import MemoizedBssDComponent from "./BssD/BssD"
 import MemoizedBcsDComponent from "./BcsD/BcsD"
@@ -40,6 +41,7 @@ const Decimals = () => {
         name={"decimalToBinarie"}
         value={input}
         key={"decimalToBinarie"}
+        cleanInput={cleanInput}
       />
       <MemoizedBssD key={"bss"} chain={input} boolean={boolean} />
       <MemoizedBcsD key={"bcs"} chain={input} boolean={boolean} />

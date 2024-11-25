@@ -1,3 +1,4 @@
+import React from 'react'
 import { memo } from 'react'
 import { useGetExcD } from "../../../hooks/useGetExcD"
 
@@ -6,7 +7,7 @@ const ExcDComponent = ({ chain, boolean }) => {
 
   return (
     <article>
-      <p>Exc: {chain ? binarie : ''}</p>
+      <p>En Exc: {chain ? binarie : ''}</p>
     </article>
   )
 }

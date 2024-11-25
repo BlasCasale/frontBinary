@@ -1,5 +1,6 @@
+import React from "react"
 import { useCallback, useState } from "react"
-import InputGates from "../../InputGates/InputGates"
+import InputGates from "@components/InputGates/InputGates"
 import OutputOr from "./OutputOr"
 
 const Or = () => {
@@ -27,7 +28,7 @@ const Or = () => {
   return (
     <article>
       <h4>Compuerta OR</h4>
-      <InputGates handleInput={handleInput} name={"oneOr"} value={input.one} n={"1"} key={"oneOr"} cleanInput={() => cleanInput("oneOr")} />
+      <InputGates handleInput={handleInput} name={"oneOr"} value={input.oneOr} n={"1"} key={"oneOr"} cleanInput={() => cleanInput("oneOr")} />
       <InputGates handleInput={handleInput} name={"twoOr"} value={input.twoOr} n={"2"} key={"twoOr"} cleanInput={() => cleanInput("twoOr")} />
       <OutputOr key={"outputOr"} one={input.oneOr} two={input.twoOr} />
     </article>

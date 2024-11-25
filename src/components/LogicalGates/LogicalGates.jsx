@@ -1,3 +1,4 @@
+import React from "react"
 import And from "./And/And"
 import Not from "./Not/Not"
 import Or from "./Or/Or"
