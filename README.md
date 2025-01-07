@@ -16,7 +16,7 @@ Pasos para la instalación y despliegue del proyecto en forma local:
 4) npm run dev
 5) Ir al navegador y colocar http://localhost:5173
 
-Explicación del armado del proyecto:
-Durante la creación del mismo la idea central era crear una aplicación en la cual no haya navegación y que todos los componentes y funcionalidades esten desplegadas en una única vista.
-Cada una de estas funcionalidades tiene su propio componente que las envuelve entre si para poder controlar renderizados y además poder realizar el respectivo test de cada uno de los componentes con su respectivo renderizado, control de escritura de inputs, esperando que los resultados en los mismos sean los esperados a la hora de la construcción del proyecto.
+Explicación del armado del proyecto: \n
+Durante la creación del mismo la idea central era crear una aplicación en la cual no haya navegación y que todos los componentes y funcionalidades esten desplegadas en una única vista.\n
+Cada una de estas funcionalidades tiene su propio componente que las envuelve entre si para poder controlar renderizados y además poder realizar el respectivo test de cada uno de los componentes con su respectivo renderizado, control de escritura de inputs, esperando que los resultados en los mismos sean los esperados a la hora de la construcción del proyecto.\n
 Cada componente esta encargado de resolver una única operación. Estos mismos tienen sus propios componentes que lo resolveran y ejecutaran su lógica de manera independiente mediante los diferentes custom hooks que se han creado. Esto se decidió resolver de esta manera para poder generar un código mas limpio para su lectura y entendimiento, además de respetar los principios SOLID. 
