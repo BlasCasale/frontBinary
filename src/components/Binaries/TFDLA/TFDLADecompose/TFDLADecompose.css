@@ -1,0 +1,18 @@
+.boxChainTFDLA {
+  display: flex;
+  gap: 2px;
+}
+
+.boxChar {
+  display: flex;
+  gap: 1px;
+  align-items: end;
+}
+
+.charTFDLA {
+  font-size: 1.4rem;
+}
+
+.indexTFDLA {
+  font-size: 0.7rem;
+}

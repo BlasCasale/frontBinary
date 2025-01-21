@@ -1,0 +1,19 @@
+.boxExplanationTDFLA {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+}
+
+.boxTDFLACharE {
+  display: flex;
+  align-items: start;
+  gap: 2px;
+}
+
+.charTDFLAE {
+  font-size: 1.2rem;
+}
+
+.powTDFLAE {
+  font-size: 0.7rem;
+}
