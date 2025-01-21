@@ -1,7 +1,6 @@
 import React from 'react'
 import { memo } from 'react'
 import { useGetCa2B } from "../../../hooks/useGetCa2B"
-import './Ca2B.css'
 import { useGetCa2TFDLA } from '../../../hooks/useGetCa2TFDLA'
 import TFDLA from '../TFDLA/TFDLA'
 import TFDLADecomposeMemoized from '../TFDLA/TFDLADecompose/TFDLADecompose'
