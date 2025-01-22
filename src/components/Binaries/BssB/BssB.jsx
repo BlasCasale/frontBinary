@@ -14,7 +14,7 @@ const BssBComponent = ({ chain }) => {
       <p>El número interpretado en BSS es: {num}</p>
       <p>Máximo número representable en BSS: {max}</p>
       <TDFLAMemoized chain={chain} key={'TDFLA'}/>
-      <p>Explicación del sistema: En BSS al no estar el signo, todos los bits que pertenezcan a la cadena, todos serán interpretados como números de la cadena.</p>
+      <p>Explicación del sistema: En BSS al no estar el signo, todos los bits que pertenezcan a la cadena serán interpretados como números.</p>
     </article >
   )
 }

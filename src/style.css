@@ -17,3 +17,7 @@ html {
   justify-content: center;
   align-items: start;
 }
+
+.glosary {
+  font-size: 0.6rem;
+}
