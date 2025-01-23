@@ -1,20 +1,29 @@
 import React from 'react'
-import { memo } from 'react'
+import { memo, useState, useCallback } from 'react'
 import { useGetBssB } from "../../../hooks/useGetBssB"
-import TDFLAMemoized from '../TFDLA/TFDLA'
 import './BssB.css'
+import ExplanationBssB from './ExplanationBssB'
+import BoxShownEye from '../BoxShownEye/BoxShownEye'
 
 const BssBComponent = ({ chain }) => {
   const info = useGetBssB(chain) || {}
   const { num = '', max = '' } = info
+
+  const [shown, setShown] = useState(false)
+
+  const handleShown = useCallback(() => {
+    setShown((prev) => !prev)
+  }, [])
 
   return (
     <article className='cardBinaries'>
       <h4>BSS</h4>
       <p>El número interpretado en BSS es: {num}</p>
       <p>Máximo número representable en BSS: {max}</p>
-      <TDFLAMemoized chain={chain} key={'TDFLA'}/>
-      <p>Explicación del sistema: En BSS al no estar el signo, todos los bits que pertenezcan a la cadena serán interpretados como números.</p>
+
+      <BoxShownEye handleShown={handleShown} shown={shown} key={'boxBssB'} />
+
+      {shown && <ExplanationBssB chain={chain} />}
     </article >
   )
 }

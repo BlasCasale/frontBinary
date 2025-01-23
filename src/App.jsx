@@ -1,4 +1,3 @@
-import Body from "./components/Body/Body"
 import { Suspense, lazy } from "react"
 import { Switch, Route } from "wouter"
 const Decimals = lazy(() => import('./components/Decimals/Decimals'))
