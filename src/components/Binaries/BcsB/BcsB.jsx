@@ -1,8 +1,9 @@
 import React from 'react'
-import { memo, useState } from 'react'
+import { memo, useState, useCallback } from 'react'
 import { useGetBcsB } from "../../../hooks/useGetBcsB"
 import './BcsB.css'
-import TFDLAMemoized from '../TFDLA/TFDLA'
+import ExplanationBcsB from './ExplanationBcsB'
+import BoxShownEye from '../BoxShownEye/BoxShownEye'
 
 const BcsBComponent = ({ chain }) => {
   const info = useGetBcsB(chain)
@@ -11,7 +12,9 @@ const BcsBComponent = ({ chain }) => {
 
   const [shown, setShown] = useState(false)
 
-  const handleShown = () => setShown((prev) => !prev)
+  const handleShown = useCallback(() => {
+    setShown((prev) => !prev)
+  }, [])
 
   return (
     <article className='cardBinaries'>
@@ -19,17 +22,10 @@ const BcsBComponent = ({ chain }) => {
       <p>El número interpretado en BCS es: {info.binary}</p>
       <p>El máximo número positivo representable es: {info.max.positive}</p>
       <p>El máximo número negativo representable es: {info.max.negative}</p>
-      <button onClick={handleShown}>Abrir</button>
-      Explicación del sistema:
-      {
-        shown &&
-        <>
-          <TFDLAMemoized chain={newChain} key={'TFDLABcs'} />
-          <p>A diferencia del BSS, en este sistema se incorpora el módulo (signo) a la cadena. El bit mas significativo* se utilizara para determinar si el número a interpretar es positivo o negativo, siendo 1 el valor de los negativos y 0 para los positivos. El resto de los bits conformaran el número en dicho sistema.</p>
 
-          <p>* El bit mas significativo hace referencia aquel número mayor determinado por 2^n.</p>
-        </>
-      }
+      <BoxShownEye handleShown={handleShown} shown={shown} key={'boxBcsB'} />
+
+      {shown && <ExplanationBcsB newChain={newChain} key={'explanationBcsB'} />}
     </article>
   )
 }

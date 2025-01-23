@@ -21,3 +21,7 @@ html {
 .glosary {
   font-size: 0.6rem;
 }
+
+section {
+  background-color: blue;
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { memo } from 'react'
 import { useGetExcD } from "../../../hooks/useGetExcD"
+import TFDLA from '../../Binaries/TFDLA/TFDLA'
 
 const ExcDComponent = ({ chain, boolean }) => {
   const binarie = useGetExcD(chain, boolean) || ''
@@ -8,7 +9,8 @@ const ExcDComponent = ({ chain, boolean }) => {
   return (
     <article>
       <p>En Exc: {chain ? binarie : ''}</p>
-    </article>
+      <TFDLA chain={binarie} key={'explanationEx2D'} />
+    </article >
   )
 }
 

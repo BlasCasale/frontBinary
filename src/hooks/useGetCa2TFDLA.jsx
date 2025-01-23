@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import { useGetNot } from "./useGetNot"
 
 export const useGetCa2TFDLA = (chain) => {
 
