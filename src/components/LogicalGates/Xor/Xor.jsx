@@ -30,6 +30,7 @@ const Xor = () => {
       <InputGates handleInput={handleInput} n={"1"} name={"oneXor"} value={input.oneXor} key={"oneXor"} cleanInput={() => cleanInput("oneXor")} />
       <InputGates handleInput={handleInput} n={"2"} name={"twoXor"} value={input.twoXor} key={"twoXor"} cleanInput={() => cleanInput("twoXor")} />
       <OutputXor one={input.oneXor} two={input.twoXor} key={"outputXor"} />
+      <img src="https://i0.wp.com/rufianenlared.com/wp-content/uploads/2016/04/tablaXOR-1.png?resize=166%2C213" alt="Tabla de verdad XOR" />
     </article >
   )
 }

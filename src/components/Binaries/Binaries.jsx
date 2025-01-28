@@ -34,7 +34,7 @@ const Binaries = () => {
     setInput("")
   }, [])
 
-  const copyToClipboard = () => navigator.clipboard.writeText(chain)
+  const copyToClipboard = useCallback(() => navigator.clipboard.writeText(input), [input])
 
   return (
     <section className="sectionBinaries">

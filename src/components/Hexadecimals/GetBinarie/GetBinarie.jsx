@@ -2,6 +2,7 @@ import React from "react"
 import { useState, useCallback, memo } from "react"
 import { useGetBinarie } from "../../../hooks/useGetBinarie"
 import Input from "../../Input/Input"
+import ExplanationGetBinarieMemoized from "./ExplanationGetBinarie"
 
 const GetBinarieComponent = () => {
   const [input, setInput] = useState("")
@@ -20,7 +21,7 @@ const GetBinarieComponent = () => {
   const binarie = useGetBinarie(input)
 
   return (
-    <div>
+    <article className="cardBinaries">
       <h4>De hexadecimal a binario</h4>
       <Input
         handleInput={handleInput}
@@ -31,7 +32,8 @@ const GetBinarieComponent = () => {
         cleanInput={cleanInput}
       />
       <p>Cadena en binario: {binarie}</p>
-    </div>
+      <ExplanationGetBinarieMemoized chain={input} key={'explanationGetBinarie'} />
+    </article>
   )
 }
 

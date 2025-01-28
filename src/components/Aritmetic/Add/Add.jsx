@@ -21,11 +21,15 @@ const Add = () => {
     }))
   }, [])
 
+  const copyToClipboard = useCallback((field) => {
+    navigator.clipboard.writeText(input[field])
+  }, [input])
+
   return (
     <article>
       <h4>Suma binaria</h4>
-      <InputGates handleInput={handleInput} n="1" name="addOne" value={input.addOne} key="addOne" cleanInput={() => cleanInput("addOne")} />
-      <InputGates handleInput={handleInput} n="2" name="addTwo" value={input.addTwo} key="addTwo" cleanInput={() => cleanInput("addTwo")} />
+      <InputGates handleInput={handleInput} n="1" name="addOne" value={input.addOne} key="addOne" cleanInput={() => cleanInput("addOne")} copyToClipboard={copyToClipboard} field={"addOne"}/>
+      <InputGates handleInput={handleInput} n="2" name="addTwo" value={input.addTwo} key="addTwo" cleanInput={() => cleanInput("addTwo")} copyToClipboard={copyToClipboard} field={"addTwo"}/>
       <Outputadd one={input.addOne} two={input.addTwo} key="outputAdd" />
     </article>
   )

@@ -46,7 +46,7 @@ export const useGetSub = (one, two) => {
         z: zero ? "1" : "0"
       })
     } else {
-      setSub({ result: "", carry: "0", overflow: "0", n: "0", z: "0" })
+      setSub({ result: "", carry: " ", overflow: "", n: "", z: "" })
     }
   }, [one, two])
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 export const useGetAdd = (one, two) => {
-  const [add, setAdd] = useState({ result: "", carry: "0", n: "0", overflow: "0", z: "0" })
+  const [add, setAdd] = useState({ result: "", carry: "", n: "", overflow: "", z: "" })
 
   useEffect(() => {
     if (one && one.length === two.length) {
@@ -40,7 +40,7 @@ export const useGetAdd = (one, two) => {
         z: zero ? "1" : "0"
       }))
     } else {
-      setAdd({ result: "", carry: "0", n: "0", overflow: "0", z: "0" })
+      setAdd({ result: "", carry: "", n: "", overflow: "", z: "" })
     }
   }, [one, two])
 
