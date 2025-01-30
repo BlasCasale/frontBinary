@@ -1,17 +1,26 @@
 .boxInputM {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 5px;
 }
 
 .boxInput {
   display: flex;
   gap: 10px;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
 
 input {
   padding: 5px;
   font-size: 1.05rem;
+}
+
+.copy {
+  cursor: pointer;
+  color: #fafafa;
+}
+
+.trash {
+  cursor: pointer;
 }

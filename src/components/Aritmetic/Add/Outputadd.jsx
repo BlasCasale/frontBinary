@@ -8,9 +8,12 @@ const Outputadd = ({ one, two }) => {
 
   return (
     <article className="output">
-      <p>{one}</p>
-      <p>{two}</p>
-      <p>{!one && !two ? sameLength : add.result ? add.result : badResponse}</p>
+      <div>
+        <p>{one}</p>
+        <p>{two}</p>
+        {one && two && add.result && <hr />}
+        <p>{!one && !two ? sameLength : add.result ? add.result : badResponse}</p>
+      </div>
       <h5>Flags</h5>
       <div className="flags">
         <p>C={add.carry}</p>

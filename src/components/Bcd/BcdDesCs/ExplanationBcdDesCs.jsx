@@ -4,17 +4,21 @@ import { memo } from 'react'
 
 const ExplanationBcdDesCs = ({ chain, boolean }) => {
   return (
-    <ul className='listBCD'>
+    <>
       {
         chain.length > 0 &&
-        chain.split('').map((item, index) => (
-          <li key={`desCs${index}`} className='liBCD'>
-            <p>{item}</p>
-            <p>{index !== chain.length - 1 ? `${binary['F']} ${binary[item]}` : boolean ? `${binary['C']} ${binary[item]}` : `${binary['D']} ${binary[item]}`}</p>
-          </li>
-        ))
+        <ul className='listBCD'>
+          {
+            chain.split('').map((item, index) => (
+              <li key={`desCs${index}`} className='liBCD'>
+                <p>{item}</p>
+                <p>{index !== chain.length - 1 ? `${binary['F']} ${binary[item]}` : boolean ? `${binary['C']} ${binary[item]}` : `${binary['D']} ${binary[item]}`}</p>
+              </li>
+            ))
+          }
+        </ul>
       }
-    </ul>
+    </>
   )
 }
 

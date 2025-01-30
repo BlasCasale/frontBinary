@@ -1,9 +1,10 @@
 .listHexa {
   display: flex;
   justify-content: start;
-  padding: 0px 5px;
+  padding: 7px 5px;
   align-items: center;
-  gap: 7px;
+  gap: 5px;
+  background-color: #3f5f7b;
 }
 
 .liHexa {

@@ -1,9 +1,10 @@
 import React from 'react'
-import { memo } from 'react'
+import { memo, useState, useCallback } from 'react'
 import { useGetCa1D } from "../../../hooks/useGetCa1D"
 import { useGetNot } from '../../../hooks/useGetNot'
 import Ca1DExplanation from './Ca1DExplanation'
 import TDFLAExplanationMemoized from '../../Binaries/TFDLA/TDFLAExplanation/TDFLAExplanation'
+import BoxShownEyeMemoized from '../../Binaries/BoxShownEye/BoxShownEye'
 
 const Ca1DComponent = ({ chain, boolean }) => {
   const binarie = useGetCa1D(chain, boolean) || ''
@@ -12,11 +13,19 @@ const Ca1DComponent = ({ chain, boolean }) => {
 
   const negative = chain[0] === '-'
 
+  const [shown, setShown] = useState(false)
+
+  const handleShown = useCallback(() => {
+    setShown((prev) => !prev)
+  }, [shown])
+
   return (
-    <article>
+    <article className='cardBinaries'>
       <p>En Ca1: {chain ? binarie : ''}</p>
       <TDFLAExplanationMemoized chain={chainToTDFLA} negative={negative} key={'Ca1ExplanationDecimal'} />
-      <Ca1DExplanation boolean={boolean} chain={binarie} />
+      <BoxShownEyeMemoized handleShown={handleShown} shown={shown} key={'boxCa1D'} />
+      {shown && <Ca1DExplanation boolean={boolean} chain={binarie} />}
+
     </article>
   )
 }

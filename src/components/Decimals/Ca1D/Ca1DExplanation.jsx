@@ -12,9 +12,9 @@ const Ca1DExplanation = ({ boolean, chain }) => {
     <>
       {
         chain &&
-        < div >
+        < div className='boxExplanation' >
           <p>Nuevamente partiremos desde la cadena representada en BSS y en caso de que el número sea {answer}</p>
-          <p>Entonces ya con la cadena conformada {notChain} en BSS y agregandole un 0 delante, podremos obtener haciendo una operación NOT la cadena que deseamos obtener {chain}.</p>
+          {!boolean && <p>Entonces ya con la cadena conformada {notChain.slice(1)} en BSS y agregandole un 0 delante, podremos obtener haciendo una operación NOT la cadena que deseamos representar {chain}.</p>}
         </div >
 
       }

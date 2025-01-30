@@ -8,17 +8,21 @@ const ExplanationGetHexa = ({ chain }) => {
   const binaries = useGetCompleteBinary(chain)
 
   return (
-    <ul className='listHexa'>
+    <>
       {
         binaries.length > 0 &&
-        binaries.map((item, index) => (
-          <li key={`hexa${index}`} className='liHexa'>
-            <p>{item}</p>
-            <p>{hexa[item]}</p>
-          </li>
-        ))
+        <ul className='listHexa'>
+          {
+            binaries.map((item, index) => (
+              <li key={`hexa${index}`} className='liHexa'>
+                <p>{item}</p>
+                <p>{hexa[item]}</p>
+              </li>
+            ))
+          }
+        </ul>
       }
-    </ul>
+    </>
   )
 }
 

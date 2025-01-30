@@ -1,12 +1,13 @@
 import React from 'react'
 import { PiEyeBold, PiEyeClosedBold } from 'react-icons/pi'
 import { memo } from 'react'
+import './BoxShownEye.css'
 
 const BoxShownEye = ({ shown, handleShown }) => {
   return (
-    <div>
+    <div className='boxShownEye'>
       <p>Explicación del sistema:</p>
-      {!shown ? <PiEyeBold onClick={handleShown} /> : <PiEyeClosedBold onClick={handleShown} />}
+      {!shown ? <PiEyeBold onClick={handleShown} className='eye' /> : <PiEyeClosedBold onClick={handleShown} className='eye' />}
     </div>
   )
 }

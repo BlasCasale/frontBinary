@@ -8,16 +8,21 @@ const ExplanationBcdEmpSs = ({ number }) => {
   const render = number.split('')
 
   return (
-    <ul className='listBCD'>
+    <>
       {
-        render.map((item, index) => (
-          <li key={`empSs${index}`} className='liBCD'>
-            <p>{item}</p>
-            <p>{binary[item]}</p>
-          </li>
-        ))
+        number.length > 0 &&
+        <ul className='listBCD'>
+          {
+            render.map((item, index) => (
+              <li key={`empSs${index}`} className='liBCD'>
+                <p>{item}</p>
+                <p>{binary[item]}</p>
+              </li>
+            ))
+          }
+        </ul>
       }
-    </ul>
+    </>
   )
 }
 

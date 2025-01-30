@@ -5,7 +5,7 @@ import TFDLA from '../TFDLA/TFDLA'
 const ExplanationCa2B = ({ chain, render }) => {
   return (
     <>
-      <div className='boxExplanationCa1'>
+      <div className='boxExplanation'>
         <TFDLADecomposeMemoized chain={chain} key={'explanationCa2'} />
         {chain && <p className='charTFDLA'>NOT =</p>}
         <TFDLADecomposeMemoized chain={render} key={'notExplanationCa2'} />

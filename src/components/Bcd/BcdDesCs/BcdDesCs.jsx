@@ -31,7 +31,7 @@ const BcdDesCsComponent = () => {
   const binarie = useGetBcdDesCs(chain, boolean)
 
   return (
-    <article>
+    <article className="cardBinaries">
       <h4>BCD desempaquetado con signo</h4>
       <Input
         handleInput={handleInput}
