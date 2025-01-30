@@ -6,7 +6,7 @@ const InputGates = ({ handleInput, name, value, n, cleanInput, copyToClipboard, 
     return (
         <div>
             <label htmlFor={name}>Cadena n° {n}:</label>
-            <div className="inputBox">
+            <div className="boxInput">
                 <input type="text" id={name} name={name} onChange={handleInput} value={value} />
                 <MemoizedTrash cleanInput={cleanInput} />
                 <FaCopy key={`${name}${n}`} onClick={() => copyToClipboard(field)} />

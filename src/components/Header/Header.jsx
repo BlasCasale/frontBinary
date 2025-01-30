@@ -1,18 +1,23 @@
 import React from 'react'
 import { Link } from 'wouter'
+import { LuBinary } from 'react-icons/lu'
+import { TbNumber123, TbHexagonLetterA } from 'react-icons/tb'
+import { BiMath } from 'react-icons/bi'
+import { FaInfo } from 'react-icons/fa'
 import './Header.css'
 
 const Header = () => {
   return (
     <header>
-      <h1>Tu-bin</h1>
+      <Link href='/'><h1>Conversor de binario</h1></Link>
       <nav>
-        <Link href='/binaries'>Binarios</Link>
-        <Link href='/decimals'>Decimales</Link>
-        <Link href='/bcd'>BCD</Link>
-        <Link href='/hexadecimals'>Hexadecimal</Link>
-        <Link href='/aritmetic'>Suma y resta</Link>
-        <Link href='/logicalGates'>Compuertas</Link>
+        <Link href='/binaries'><LuBinary className='iconsNav' /><span className='spanNav'>Binarios</span></Link>
+        <Link href='/decimals'><TbNumber123 className='iconsNav' /><span className='spanNav'>Decimales</span></Link>
+        <Link href='/bcd'><LuBinary className='iconsNav' /><span className='spanNav'>BCD</span></Link>
+        <Link href='/hexadecimals'><TbHexagonLetterA className='iconsNav' /><span className='spanNav'>Hexadecimal</span></Link>
+        <Link href='/aritmetic'><BiMath className='iconsNav' /><span className='spanNav'>Aritmética</span></Link>
+        <Link href='/logicalGates'><LuBinary className='iconsNav' /><span className='spanNav'>Lógica</span></Link>
+        <Link href='/info'>< FaInfo className='iconsNav' /><span className='spanNav'>Información</span></Link>
       </nav>
     </header>
   )

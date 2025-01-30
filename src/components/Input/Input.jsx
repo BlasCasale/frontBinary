@@ -9,8 +9,8 @@ const Input = ({ handleInput, value, name, message, cleanInput, copyToClipboard 
       <label htmlFor={name}>{message}</label>
       <div className="boxInput">
         <input type="text" id={name} name={name} onChange={handleInput} value={value} />
-        <MemoizedTrash cleanInput={cleanInput} />
-        <FaCopy onClick={copyToClipboard} />
+        <MemoizedTrash cleanInput={cleanInput} className='trash' />
+        <FaCopy onClick={copyToClipboard} className='copy' />
       </div>
     </div>
   )

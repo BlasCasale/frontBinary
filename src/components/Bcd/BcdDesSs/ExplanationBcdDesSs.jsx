@@ -4,17 +4,21 @@ import { memo } from 'react'
 
 const ExplanationBcdDesSs = ({ chain }) => {
   return (
-    <ul className='listBCD'>
+    <>
       {
         chain.length > 0 &&
-        chain.split('').map((item, index) => (
-          < li key={`desSs${index}`} className='liBCD'>
-            <p>{item}</p>
-            <p>{binary['F']} {binary[item]}</p>
-          </li>
-        ))
+        <ul className='listBCD'>
+          {
+            chain.split('').map((item, index) => (
+              < li key={`desSs${index}`} className='liBCD'>
+                <p>{item}</p>
+                <p>{binary['F']} {binary[item]}</p>
+              </li>
+            ))
+          }
+        </ul>
       }
-    </ul>
+    </>
   )
 }
 

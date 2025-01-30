@@ -8,7 +8,7 @@ const Ca2DExplanation = ({ chain, ca2, boolean }) => {
   const bss = useGetBssD(chain)
 
   return (
-    <div>
+    <div className='boxExplanation'>
       <p>Explicación del sistema: partiendo de nuestra cadena obtenida en BSS, debemos tener en claro que para escribir {answer}</p>
       {!boolean && <p>Partiendo de nuestra cadena {bss} hacemos la operación NOT después del primer bit en 1 que encontremos y luego agregamos el bit en 1 para asignarle el módulo. Como resultado nos quedara la cadena {ca2}.</p>}
     </div>

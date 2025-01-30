@@ -4,17 +4,21 @@ import { binary } from '../../../utils/data'
 
 const ExplanationGetBinarie = ({ chain }) => {
   return (
-    <ul className='listHexa'>
+    <>
       {
         chain.length > 0 &&
-        chain.split('').map((item, index) => (
-          <li key={`binarie${index}`} className='liHexa'>
-            <p>{item}</p>
-            <p>{binary[item]}</p>
-          </li>
-        ))
+        <ul className='listHexa'>
+          {
+            chain.split('').map((item, index) => (
+              <li key={`binarie${index}`} className='liHexa'>
+                <p>{item}</p>
+                <p>{binary[item]}</p>
+              </li>
+            ))
+          }
+        </ul>
       }
-    </ul>
+    </>
   )
 }
 

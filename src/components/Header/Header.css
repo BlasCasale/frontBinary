@@ -1,6 +1,26 @@
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px 0px;
+  background-color: #aab9cf;
+}
+
 nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 7px;
+  gap: 20px;
+}
+
+.iconsNav {
+  font-size: 2.5rem;
+}
+
+.spanNav {
+  font-size: 0.7rem;
+  font-weight: bold;
 }

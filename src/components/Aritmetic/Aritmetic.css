@@ -4,10 +4,5 @@
   justify-content: center;
   align-items: start;
   gap: 20px;
-}
-
-@media (min-width: 751px) {
-  .aritmeticSection {
-    grid-area: Aritmetic;
-  }
+  padding: 40px 5px;
 }

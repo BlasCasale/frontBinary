@@ -9,9 +9,12 @@ const OutputSub = ({ one, two }) => {
 
   return (
     <article className='output'>
-      <p>{one}</p>
-      <p>{two}</p>
-      <p>{!one && !two ? sameLength : sub.result ? sub.result : badResponse}</p>
+      <div>
+        <p>{one}</p>
+        <p>{two}</p>
+        {one && two && sub.result && <hr />}
+        <p>{!one && !two ? sameLength : sub.result ? sub.result : badResponse}</p>
+      </div>
       <h5>Flags</h5>
       <div className='flags'>
         <p>C={sub.carry}</p>
