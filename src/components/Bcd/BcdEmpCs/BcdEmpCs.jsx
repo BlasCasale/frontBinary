@@ -2,6 +2,7 @@ import React from "react"
 import { useState, useCallback, memo } from "react"
 import { useGetBcdEmpCs } from "../../../hooks/useGetBcdEmpCs"
 import Input from "../../Input/Input"
+import ExplanationBcdDesCsMemoized from "./ExplanationBcdEmpCs"
 
 const BcdEmpCsComponent = () => {
   const [inputR, setInputR] = useState("")
@@ -31,7 +32,7 @@ const BcdEmpCsComponent = () => {
   const binarie = useGetBcdEmpCs(chain, boolean)
 
   return (
-    <section>
+    <section className="cardBinaries">
       <h4>BCD empaquetado con signo</h4>
       <Input
         handleInput={handleInput}
@@ -42,6 +43,7 @@ const BcdEmpCsComponent = () => {
         cleanInput={cleanInput}
       />
       <p>Binario: {binarie}</p>
+      <ExplanationBcdDesCsMemoized number={chain} key={'explanationBcdEmpCs'}/>
     </section>
   )
 }

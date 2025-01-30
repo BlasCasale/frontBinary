@@ -3,6 +3,7 @@ import { useState, useCallback, memo } from "react"
 import { numbers } from "../../../utils/data"
 import { useGetBcdDesSs } from "../../../hooks/useGetBcdDesSs"
 import Input from "../../Input/Input"
+import ExplanationBcdDesSsMemoized from "./ExplanationBcdDesSs"
 
 const BcdDesSsComponent = () => {
   const [inputR, setInputR] = useState("")
@@ -24,7 +25,7 @@ const BcdDesSsComponent = () => {
   const binarie = useGetBcdDesSs(chain)
 
   return (
-    <article>
+    <article className="cardBinaries">
       <h4>BCD desempaquetado sin signo</h4>
       <Input
         handleInput={handleInput}
@@ -35,6 +36,7 @@ const BcdDesSsComponent = () => {
         cleanInput={cleanInput}
       />
       <p>Binario: {binarie}</p>
+      <ExplanationBcdDesSsMemoized chain={chain} key={"explanationBcdDesSs"}/>
     </article>
   )
 }

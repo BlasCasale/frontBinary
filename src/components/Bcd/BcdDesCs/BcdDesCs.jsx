@@ -2,6 +2,7 @@ import React from "react"
 import { useState, useCallback, memo } from "react"
 import { useGetBcdDesCs } from "../../../hooks/useGetBcdDesCs"
 import Input from "../../Input/Input"
+import ExplanationBcdDesCsMemoized from "./ExplanationBcdDesCs"
 
 const BcdDesCsComponent = () => {
   const [input, setInput] = useState("")
@@ -41,6 +42,7 @@ const BcdDesCsComponent = () => {
         cleanInput={cleanInput}
       />
       <p>Binario: {binarie}</p>
+      <ExplanationBcdDesCsMemoized chain={input} boolean={boolean} key={"explanationBcdDesCs"} />
     </article>
   )
 }

@@ -2,6 +2,7 @@ import React from "react"
 import { useState, useCallback, memo } from "react"
 import { useGetHexadecimal } from "../../../hooks/useGetHexadecimal"
 import Input from "../../Input/Input"
+import ExplanationGetHexaMemoized from "./ExplanationGetHexa"
 
 const GetHexaComponent = () => {
   const [input, setInput] = useState("")
@@ -19,7 +20,7 @@ const GetHexaComponent = () => {
   const hexa = useGetHexadecimal(input)
 
   return (
-    <article>
+    <article className="cardBinaries">
       <h4>De binario a hexadecimal</h4>
       <Input
         handleInput={handleInput}
@@ -30,6 +31,7 @@ const GetHexaComponent = () => {
         cleanInput={cleanInput}
       />
       <p>Cadena en hexadecimal: {hexa}</p>
+      <ExplanationGetHexaMemoized chain={input} key={'explanationGetHexa'} />
     </article>
   )
 }

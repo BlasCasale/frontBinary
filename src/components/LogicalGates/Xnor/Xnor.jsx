@@ -30,6 +30,7 @@ const Xnor = () => {
       <InputGates handleInput={handleInput} n={"1"} name={"oneXnor"} value={input.oneXnor} key={"oneXnor"} cleanInput={() => cleanInput("oneXnor")} />
       <InputGates handleInput={handleInput} n={"2"} name={"twoXnor"} value={input.twoXnor} key={"twoXnor"} cleanInput={() => cleanInput("twoXnor")} />
       <OutputXnor one={input.oneXnor} two={input.twoXnor} key={"outputXnor"} />
+      <img src="https://i0.wp.com/rufianenlared.com/wp-content/uploads/2016/04/tablaXNOR-1.png?resize=156%2C212" alt="Tabla de verdad XNOR" />
     </article>
   )
 }

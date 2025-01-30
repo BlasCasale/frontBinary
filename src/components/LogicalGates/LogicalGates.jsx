@@ -11,12 +11,12 @@ const LogicalGates = () => {
     return (
         <section className="logicalGatesSection">
             <h3>Compuertas lógicas</h3>
-            <And />
-            <Or />
-            <Not />
-            <Nand />
-            <Xor />
-            <Xnor />
+            <And key={'and'} />
+            <Or key={'or'} />
+            <Not key={'not'} />
+            <Nand key={'nand'} />
+            <Xor key={'xor'} />
+            <Xnor key={'xnor'} />
         </section>
     )
 }

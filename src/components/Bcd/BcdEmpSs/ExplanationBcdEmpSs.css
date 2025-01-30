@@ -1,0 +1,15 @@
+.listBCD {
+  display: flex;
+  justify-content: start;
+  padding: 0px 5px;
+  align-items: center;
+  gap: 7px;
+}
+
+.liBCD {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: start;
+}

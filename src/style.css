@@ -16,6 +16,7 @@ html {
   gap: 10px;
   justify-content: center;
   align-items: start;
+  padding: 5px;
 }
 
 .glosary {
@@ -24,4 +25,11 @@ html {
 
 section {
   background-color: blue;
+}
+
+.boxClipboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
