@@ -1,5 +1,6 @@
 import { Suspense, lazy } from "react"
 import { Switch, Route, useLocation } from "wouter"
+import { Analytics } from "@vercel/analytics/react"
 const Decimals = lazy(() => import('./components/Decimals/Decimals'))
 const Header = lazy(() => import("./components/Header/Header"))
 const Binaries = lazy(() => import("./components/Binaries/Binaries"))
@@ -13,10 +14,11 @@ function App() {
   const [location, setLocation] = useLocation()
 
   if (location === '/') setLocation('/binaries')
-    
+
   return (
     <>
       <Suspense fallback={<h2>Cargando recursos...</h2>}>
+        <Analytics />
         <Header />
         <Switch>
           <Route component={Binaries} path={'/binaries'} />
