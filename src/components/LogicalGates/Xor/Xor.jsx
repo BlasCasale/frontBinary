@@ -2,7 +2,6 @@ import React from "react"
 import { useCallback, useState } from "react"
 import InputGates from "../../InputGates/InputGates"
 import OutputXor from "./OutputXor"
-import imgXor from '../../../assets/XOR.webp'
 
 const Xor = () => {
 
@@ -31,7 +30,7 @@ const Xor = () => {
       <InputGates handleInput={handleInput} n={"1"} name={"oneXor"} value={input.oneXor} key={"oneXor"} cleanInput={() => cleanInput("oneXor")} />
       <InputGates handleInput={handleInput} n={"2"} name={"twoXor"} value={input.twoXor} key={"twoXor"} cleanInput={() => cleanInput("twoXor")} />
       <OutputXor one={input.oneXor} two={input.twoXor} key={"outputXor"} />
-      <img src={imgXor} alt="Tabla de verdad XOR" />
+      <img src={'src/assets/XOR.webp'} alt="Tabla de verdad XOR" />
     </article >
   )
 }
