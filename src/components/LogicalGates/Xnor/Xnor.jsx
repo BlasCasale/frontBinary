@@ -2,7 +2,6 @@ import React from "react"
 import { useCallback, useState } from "react"
 import InputGates from "../../InputGates/InputGates"
 import OutputXnor from "./OutputXnor"
-import imgXnor from '../../../assets/XNOR.webp'
 
 const Xnor = () => {
 
@@ -31,7 +30,7 @@ const Xnor = () => {
       <InputGates handleInput={handleInput} n={"1"} name={"oneXnor"} value={input.oneXnor} key={"oneXnor"} cleanInput={() => cleanInput("oneXnor")} />
       <InputGates handleInput={handleInput} n={"2"} name={"twoXnor"} value={input.twoXnor} key={"twoXnor"} cleanInput={() => cleanInput("twoXnor")} />
       <OutputXnor one={input.oneXnor} two={input.twoXnor} key={"outputXnor"} />
-      <img src={imgXnor} alt="Tabla de verdad XNOR" />
+      <img src={'src/assets/XNOR.webp'} alt="Tabla de verdad XNOR" />
     </article>
   )
 }
