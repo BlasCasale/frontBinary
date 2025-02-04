@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react"
-import { Switch, Route, useLocation } from "wouter"
+import { Switch, Route } from "wouter"
 import { Analytics } from "@vercel/analytics/react"
 const Decimals = lazy(() => import('./components/Decimals/Decimals'))
 const Header = lazy(() => import("./components/Header/Header"))
@@ -11,23 +11,19 @@ const LogicalGates = lazy(() => import("./components/LogicalGates/LogicalGates")
 
 function App() {
 
-  const [location, setLocation] = useLocation()
-
-  if (location === '/') setLocation('/binaries')
-
   return (
     <>
       <Suspense fallback={<h2>Cargando recursos...</h2>}>
         <Analytics />
         <Header />
         <Switch>
-          <Route component={Binaries} path={'/binaries'} />
+          <Route component={Binaries} path={'/'} />
           <Route component={Decimals} path={'/decimals'} />
           <Route component={Bcd} path={'/bcd'} />
           <Route component={Aritmetic} path={'/aritmetic'} />
           <Route component={Hexadecimals} path={'/hexadecimals'} />
           <Route component={LogicalGates} path={'/logicalGates'} />
-          <Route component={() => <h2>404</h2>} path={'/info'} />
+          <Route component={() => <h2>Proximamente...</h2>} path={'/info'} />
         </Switch>
       </Suspense>
     </>
