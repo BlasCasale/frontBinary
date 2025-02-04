@@ -5,9 +5,3 @@
   align-items: start;
   gap: 20px;
 }
-
-@media (min-width: 751px) {
-  .logicalGatesSection {
-    grid-area: LogicalGates;
-  }
-}

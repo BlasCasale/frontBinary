@@ -2,6 +2,7 @@ import React from "react"
 import { useCallback, useState } from "react"
 import InputGates from "../../InputGates/InputGates"
 import OutputXor from "./OutputXor"
+import imgXor from '../../../assets/XOR.webp'
 
 const Xor = () => {
 
@@ -25,12 +26,12 @@ const Xor = () => {
   }, [])
 
   return (
-    <article>
+    <article className="cardBinaries">
       <h4>Compuerta XOR</h4>
       <InputGates handleInput={handleInput} n={"1"} name={"oneXor"} value={input.oneXor} key={"oneXor"} cleanInput={() => cleanInput("oneXor")} />
       <InputGates handleInput={handleInput} n={"2"} name={"twoXor"} value={input.twoXor} key={"twoXor"} cleanInput={() => cleanInput("twoXor")} />
       <OutputXor one={input.oneXor} two={input.twoXor} key={"outputXor"} />
-      <img src="https://i0.wp.com/rufianenlared.com/wp-content/uploads/2016/04/tablaXOR-1.png?resize=166%2C213" alt="Tabla de verdad XOR" />
+      <img src={imgXor} alt="Tabla de verdad XOR" />
     </article >
   )
 }
