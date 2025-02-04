@@ -9,9 +9,9 @@ import './Header.css'
 const Header = () => {
   return (
     <header>
-      <Link href='/'><h1>Conversor de binario</h1></Link>
+      <Link href='/'><h1>Tu-bin</h1></Link>
       <nav>
-        <Link href='/binaries'><LuBinary className='iconsNav' /><span className='spanNav'>Binarios</span></Link>
+        <Link href='/'><LuBinary className='iconsNav' /><span className='spanNav'>Binarios</span></Link>
         <Link href='/decimals'><TbNumber123 className='iconsNav' /><span className='spanNav'>Decimales</span></Link>
         <Link href='/bcd'><LuBinary className='iconsNav' /><span className='spanNav'>BCD</span></Link>
         <Link href='/hexadecimals'><TbHexagonLetterA className='iconsNav' /><span className='spanNav'>Hexadecimal</span></Link>
