@@ -24,6 +24,7 @@ function App() {
           <Route component={Hexadecimals} path={'/hexadecimals'} />
           <Route component={LogicalGates} path={'/logicalGates'} />
           <Route component={() => <h2>Proximamente...</h2>} path={'/info'} />
+          <Route component={() => <h2>Vuelva a alguna ruta válida...</h2>} path={'/*'} />
         </Switch>
       </Suspense>
     </>
