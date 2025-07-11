@@ -23,3 +23,7 @@ Durante la creación del mismo la idea central era crear una aplicación en la c
 Cada una de estas funcionalidades tiene su propio componente que las envuelve entre si para poder controlar renderizados y además poder realizar el respectivo test de cada uno de los componentes con su respectivo renderizado, control de escritura de inputs, esperando que los resultados en los mismos sean los esperados a la hora de la construcción del proyecto.
 
 Cada componente esta encargado de resolver una única operación. Estos mismos tienen sus propios componentes que lo resolveran y ejecutaran su lógica de manera independiente mediante los diferentes custom hooks que se han creado. Esto se decidió resolver de esta manera para poder generar un código mas limpio para su lectura y entendimiento, además de respetar los principios SOLID. 
+
+Documentació de la patente del software:
+
+[Ver documentación en PDF](ObrapublicadaSoftware.pdf)
