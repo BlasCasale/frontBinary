@@ -1,5 +1,5 @@
 # Resumen del proyecto
-El propósito de este proyecto es el de proporcionar una herramienta para los estudiantes de toda carrera relacionada con informática y afines. Este mismo fue creado sin fines de lucro y con el fin de proporcionar un apoyo para corroborar las operaciones y operaciones aritmetico/lógicas, desarrolladas a lo largo de la carrera. 
+Este proyecto es una herramienta para los estudiantes de la facultad de informática de la ciudad de La Plata. Esta app ha sido de gran ayuda para los estudiantes que se encuentran cursando en el primer año de la carrera las asignaturas de "Organización de computadoras" y "Arquitectura de computadoras", la misma les ha proporcionado una herramienta que les permita corroborar la exactitud de las diferentes operaciones que se realizan en ambas asignaturas.
 
 - Tecnologías utilizadas para el desarrollo del proyecto
 . HTML 5
